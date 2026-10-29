@@ -1,0 +1,33 @@
+####################################
+# Copy this file to terraform.tfvars
+# and fill in your values.
+####################################
+
+ibmcloud_api_key = "YOUR_IBM_CLOUD_API_KEY"
+
+region               = "us-east"
+resource_group_name  = "Default"
+prefix               = "qsk"
+
+# VPC networking
+vpc_cidr   = "10.0.0.0/16"
+zone1_cidr = "10.0.1.0/24"
+zone2_cidr = "10.0.2.0/24"
+zone3_cidr = "10.0.3.0/24"
+
+# VPN
+vpn_client_ip_pool  = "172.16.0.0/22"
+vpn_port            = 443
+vpn_protocol        = "udp"
+vpn_dns_server_ips  = ["161.26.0.7", "161.26.0.8"]
+vpn_ibm_dns_cidr    = "161.26.0.0/16"
+
+# Secrets Manager
+# Set to the name of an existing SM instance to reuse it,
+# or leave empty ("") to create a new 'standard' plan instance.
+existing_secrets_manager_name = ""
+secrets_manager_plan          = "trial"
+
+# Qiskit Runtime
+qiskit_instance_name  = "qiskit-paygo"
+qiskit_limit_seconds  = 600
