@@ -27,6 +27,7 @@ resource "ibm_resource_instance" "new_sm" {
   service           = "secrets-manager"
   plan              = var.secrets_manager_plan
   location          = var.region
+  service_endpoints = "public-and-private"
   resource_group_id = data.ibm_resource_group.rg.id
 
   timeouts {
